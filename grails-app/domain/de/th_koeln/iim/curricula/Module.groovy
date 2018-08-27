@@ -14,8 +14,8 @@ class Module {
 
     static constraints = {
       title(nullable:false, blank:false)
-      description(nullable:false, blank:false, size: 1..15000, widget:'textarea')
-      content(nullable:true, blank:true, size: 0..20000, widget:'textarea')
+      description(nullable:false, blank:false, widget:'textarea')
+      content(nullable:true, blank:true, widget:'textarea')
       ects(nullable:true, blank:true)
       teachingMethod(nullable:true, blank:true)
       semester(min:1)
