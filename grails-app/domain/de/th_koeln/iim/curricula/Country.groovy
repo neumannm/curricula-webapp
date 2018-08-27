@@ -13,4 +13,8 @@ class Country {
     String toString(){
         return name
     }
+
+    static mapping = {
+        table 'countries'
+    }
 }

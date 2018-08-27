@@ -17,4 +17,8 @@ class Curriculum {
     String toString(){
         return "${programme}:${year}"
     }
+
+    static mapping = {
+        table 'curricula'
+    }
 }

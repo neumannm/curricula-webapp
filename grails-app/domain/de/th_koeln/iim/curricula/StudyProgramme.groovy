@@ -15,6 +15,10 @@ class StudyProgramme {
     }
 
     String toString(){
-        return "${name}(${degree}), ${university}"
+        return "${name} (${degree}), ${university}"
+    }
+
+    static mapping = {
+        table 'programmes'
     }
 }

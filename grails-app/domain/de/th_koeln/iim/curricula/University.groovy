@@ -15,4 +15,8 @@ class University {
     String toString(){
         return "${name}, ${city}"
     }
+
+    static mapping = {
+        table 'universities'
+    }
 }

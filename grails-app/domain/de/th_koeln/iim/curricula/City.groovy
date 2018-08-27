@@ -15,4 +15,8 @@ class City {
     String toString(){
         return name
     }
+
+    static mapping = {
+        table 'cities'
+    }
 }
