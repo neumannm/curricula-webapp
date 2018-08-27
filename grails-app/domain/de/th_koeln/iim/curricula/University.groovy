@@ -4,7 +4,6 @@ class University {
 
     String name
     City city
-    StudyProgramme programme
     // delete a university if the city item is deleted
     static belongsTo=[city:City]
     static hasMany=[programmes:StudyProgramme]
