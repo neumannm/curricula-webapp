@@ -8,6 +8,7 @@ class Module {
     String content
     String teachingMethod
     String ects
+    boolean isMandatory
 
     static belongsTo=[curriculum:Curriculum]
 
