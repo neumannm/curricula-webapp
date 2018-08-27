@@ -8,7 +8,8 @@ class Curriculum {
     static hasMany=[modules:Module]
     static belongsTo=[programme:StudyProgramme]
 
+    //TODO: correct constraint for year
     static constraints = {
-      year(nullable:false, blank:false, matches:"[12][0-9]{3}")
+      year(nullable:false, blank:false)
     }
 }
