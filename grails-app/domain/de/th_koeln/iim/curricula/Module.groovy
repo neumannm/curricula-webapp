@@ -15,7 +15,12 @@ class Module {
     static constraints = {
       title(nullable:false, blank:false)
       description(nullable:false, blank:false, size: 1..15000)
-      content(size: 0..20000)
+      content(nullable:true, blank:true, size: 0..20000)
+      ects(nullable:true, blank:true)
+      teachingMethod(nullable:true, blank:true)
+      semester(min:1)
+      isMandatory()
+      curriculum()
     }
 
     static mapping = {
