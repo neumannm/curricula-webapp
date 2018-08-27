@@ -15,4 +15,8 @@ class Module {
       title(nullable:false, blank:false)
       description(nullable:false, blank:false)
     }
+
+    String toString(){
+        return title
+    }
 }

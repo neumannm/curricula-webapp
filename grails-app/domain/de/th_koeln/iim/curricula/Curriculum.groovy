@@ -4,6 +4,7 @@ class Curriculum {
 
     int year
     String comment
+    StudyProgramme programme
 
     static hasMany=[modules:Module]
     static belongsTo=[programme:StudyProgramme]
@@ -11,5 +12,9 @@ class Curriculum {
     //TODO: correct constraint for year
     static constraints = {
       year(nullable:false, blank:false)
+    }
+
+    String toString(){
+        return "${programme}:${year}"
     }
 }
