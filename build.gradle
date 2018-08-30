@@ -64,7 +64,7 @@ dependencies {
     runtime "org.postgresql:postgresql:42.2.4"
     //test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
     //Spring security
-    //compile 'org.grails.plugins:spring-security-core:3.2.3'
+    compile 'org.grails.plugins:spring-security-core:3.2.3'
 }
 
 bootRun {

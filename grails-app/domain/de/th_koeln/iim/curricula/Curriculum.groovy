@@ -11,7 +11,7 @@ class Curriculum {
 
     //TODO: correct constraint for year
     static constraints = {
-      year(nullable:false, blank:false, min:1980)
+      year(nullable:false, blank:false, min:1980, size:4)
     }
 
     String toString(){

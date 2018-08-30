@@ -53,6 +53,7 @@
         <section class="row colset-2-its">
             <h1>Curricula Manager</h1>
 
+            <sec:ifAnyGranted roles="ROLE_USER, ROLE_ADMIN">
             <div id="controllers" role="navigation">
                 <h2>Available Controllers:</h2>
                 <ul>
@@ -63,6 +64,7 @@
                     </g:each>
                 </ul>
             </div>
+            </sec:ifAllGranted>
         </section>
     </div>
 

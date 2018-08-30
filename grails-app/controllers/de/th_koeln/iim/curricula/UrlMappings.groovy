@@ -1,4 +1,4 @@
-package de.th_koeln.iim
+package de.th_koeln.iim.curricula
 
 class UrlMappings {
 
@@ -12,5 +12,8 @@ class UrlMappings {
         "/"(view:"/index")
         "500"(view:'/error')
         "404"(view:'/notFound')
+
+        "/login/$action?"(controller: "login")
+        "/logout/$action?"(controller: "logout")
     }
 }
