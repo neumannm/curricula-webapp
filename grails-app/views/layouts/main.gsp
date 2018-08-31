@@ -25,12 +25,22 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="/#">
-		    <asset:image src="grails.svg" alt="Grails Logo"/>
+		                <asset:image src="grails.svg" alt="Grails Logo"/>
                 </a>
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
                 <ul class="nav navbar-nav navbar-right">
                     <g:pageProperty name="page.nav" />
+                    <sec:ifLoggedIn>
+                      <form name="logout" method="POST" action="${createLink(controller:'logout') }">
+                        <input type="submit" value="Logout">
+                      </form>
+                    </sec:ifLoggedIn>
+                    <sec:ifNotLoggedIn>
+                    <form name="login" action="${createLink(controller:'login') }">
+                      <input type="submit" value="Login">
+                    </form>
+                    </sec:ifNotLoggedIn>
                 </ul>
             </div>
         </div>

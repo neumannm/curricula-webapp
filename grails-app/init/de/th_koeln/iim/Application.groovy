@@ -1,4 +1,4 @@
-package de.th_koeln.iim.curricula
+package de.th_koeln.iim
 
 import grails.boot.GrailsApp
 import grails.boot.config.GrailsAutoConfiguration

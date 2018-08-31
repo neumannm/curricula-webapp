@@ -1,4 +1,6 @@
-package de.th_koeln.iim.curricula
+package de.th_koeln.iim
+
+import de.th_koeln.iim.curricula.*
 
 class BootStrap {
 

@@ -6,17 +6,19 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'de.th_koeln.ii
 grails.plugin.springsecurity.authority.className = 'de.th_koeln.iim.curricula.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/*',              access: ['IS_AUTHENTICATED_FULLY']],
-	[pattern: '/error',          access: ['ROLE_USER, ROLE_ADMIN, IS_AUTHENTICATED_FULLY']],
-	[pattern: '/index',          access: ['ROLE_USER, ROLE_ADMIN, IS_AUTHENTICATED_FULLY']],
-	[pattern: '/index.gsp',      access: ['ROLE_USER, ROLE_ADMIN, IS_AUTHENTICATED_FULLY']],
+	[pattern: '/error',          access: ['permitAll']],
+	[pattern: '/index',          access: ['permitAll']],
+	[pattern: '/index.gsp',      access: ['permitAll']],
 	[pattern: '/shutdown',       access: ['ROLE_ADMIN']],
 	[pattern: '/assets/**',      access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
 	[pattern: '/**/js/**',       access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
 	[pattern: '/**/css/**',      access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
 	[pattern: '/**/images/**',   access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
 	[pattern: '/**/favicon.ico', access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
-	[pattern: '/login/**',       access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
-	[pattern: '/logout/**',      access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
+	[pattern: '/login',          access: ['permitAll']],
+	[pattern: '/login/**',       access: ['permitAll']],
+	[pattern: '/logout',         access: ['permitAll']],
+	[pattern: '/logout/**',      access: ['permitAll']],
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

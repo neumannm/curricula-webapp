@@ -2,7 +2,9 @@ package de.th_koeln.iim.curricula
 
 import grails.validation.ValidationException
 import static org.springframework.http.HttpStatus.*
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured(['ROLE_ADMIN', 'ROLE_USER'])
 class CountryController {
 
     CountryService countryService

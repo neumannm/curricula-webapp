@@ -11,7 +11,7 @@ buildscript {
 }
 
 version "0.1"
-group "de.th_koeln.iim"
+group "de.th_koeln.iim.curricula"
 
 apply plugin:"eclipse"
 apply plugin:"idea"

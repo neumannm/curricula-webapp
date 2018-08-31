@@ -9,11 +9,16 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
-        "500"(view:'/error')
-        "404"(view:'/notFound')
+        //mapping to a view
+        "/"(view:"/index") //grails-app/views/index.gsp
+        "500"(view:'/error') //grails-app/views/error.gsp
+        "404"(view:'/notFound') //grails-app/views/notFound.gsp
 
+        //mapping to a controller
         "/login/$action?"(controller: "login")
-        "/logout/$action?"(controller: "logout")
+        "/logout/$action?" {
+            controller = 'logout'
+            action = [POST: 'index']
+        }
     }
 }
