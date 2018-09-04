@@ -32,9 +32,20 @@
                 <h2><g:message code="available.controllers.label" /></h2>
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name } }">
+                    <g:if test="${c.fullName.contains('Login') || c.fullName.contains('Logout')}">
+                      <g:if test="${session.role == 'admin'}">
+                       <%-- show administrative functions --%>
+                       <%-- TODO correct test using ROLE_ADMIN etc--%>
+                       <li class="controller">
+                           <g:link controller="${c.logicalPropertyName}">${c.shortName}</g:link>
+                       </li>
+                      </g:if>
+                    </g:if>
+                    <g:else>
                         <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
+                            <g:link controller="${c.logicalPropertyName}">${c.shortName}</g:link>
                         </li>
+                    </g:else>
                     </g:each>
                 </ul>
             </div>
