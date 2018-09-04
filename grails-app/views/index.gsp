@@ -24,12 +24,12 @@
 
             <sec:ifNotLoggedIn>
               <!--<g:link controller='login' action='auth'>Login</g:link>-->
-              <i>You need to login first</i>
+              <i><g:message code="general.notloggedin.label" /></i>
             </sec:ifNotLoggedIn>
 
             <sec:ifLoggedIn>
             <div id="controllers" role="navigation">
-                <h2>Available Controllers:</h2>
+                <h2><g:message code="available.controllers.label" /></h2>
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name } }">
                         <li class="controller">
