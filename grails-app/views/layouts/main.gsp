@@ -14,7 +14,6 @@
     <g:layoutHead/>
 </head>
 <body>
-
     <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -30,31 +29,39 @@
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 0.8px;">
                 <ul class="nav navbar-nav navbar-right">
-                    <g:pageProperty name="page.nav" />
-                    <sec:ifLoggedIn>
-                      <form name="logout" method="POST" action="${createLink(controller:'logout') }">
-                        <input type="submit" value="Logout">
+                    <li>
+                      <g:pageProperty name="page.nav" />
+                      <sec:ifLoggedIn>
+                        <form name="logout" method="POST" action="${createLink(controller:'logout') }">
+                          <input type="submit" value="Logout">
+                        </form>
+                      </sec:ifLoggedIn>
+                      <sec:ifNotLoggedIn>
+                      <form name="login" action="${createLink(controller:'login') }">
+                        <input type="submit" value="Login">
                       </form>
-                    </sec:ifLoggedIn>
-                    <sec:ifNotLoggedIn>
-                    <form name="login" action="${createLink(controller:'login') }">
-                      <input type="submit" value="Login">
-                    </form>
-                    </sec:ifNotLoggedIn>
+                      </sec:ifNotLoggedIn>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><g:message code="navbar.languages" default="Languages"/> <span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                          <navBar:localeDropdownListItems uri="${request.forwardURI}"/>
+                      </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <g:layoutBody/>
+  <g:layoutBody/>
 
-    <div class="footer" role="contentinfo"></div>
+  <div class="footer" role="contentinfo"></div>
 
-    <div id="spinner" class="spinner" style="display:none;">
-        <g:message code="spinner.alt" default="Loading&hellip;"/>
-    </div>
+  <div id="spinner" class="spinner" style="display:none;">
+      <g:message code="spinner.alt" default="Loading&hellip;"/>
+  </div>
 
-    <asset:javascript src="application.js"/>
+  <asset:javascript src="application.js"/>
 
 </body>
 </html>
