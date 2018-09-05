@@ -12,20 +12,13 @@ class BootStrap {
       //add an admin and default user
     def adminUser = User.findByUsername('admin') ?: new User(
             username: 'admin',
-            password: 'admin',
-            enabled: true).save(failOnError: true)
-
-    def basicUser = User.findByUsername('guest') ?: new User(
-            username: 'guest',
-            password: 'guest',                        //pw encoded by security plugin
+            password: '4dm1n.pw',
             enabled: true).save(failOnError: true)
 
     if (!adminUser.authorities.contains(adminRole)) {
         UserRole.create adminUser, adminRole
     }
-    if (!basicUser.authorities.contains(userRole)) {
-        UserRole.create basicUser, userRole
-    }
+
     }
     def destroy = {
     }
