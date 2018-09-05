@@ -43,3 +43,6 @@ grails.plugin.springsecurity.password.algorithm='SHA-512'      //pw encryption a
 grails.plugin.springsecurity.portMapper.httpPort = "8080"      //port map for http
 grails.plugin.springsecurity.portMapper.httpsPort = "8443"     //port map for https
 grails.plugin.springsecurity.rejectIfNoRule = true             //force authentication if no rule exists
+
+grails.gsp.enable.reload = true
+grails.gsp.view.dir = "/var/www/grails/curricula/"
