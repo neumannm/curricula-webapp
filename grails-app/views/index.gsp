@@ -5,60 +5,50 @@
     <title>Welcome to the Curricula Manager</title>
 </head>
 <body>
-    <content tag="nav">
-      <!--<sec:ifLoggedIn>
-      <form name="logout" method="POST" action="${createLink(controller:'logout') }">
-        <input type="submit" value="Logout">
-      </form>
-    </sec:ifLoggedIn>
-    <sec:ifNotLoggedIn>
-      <form name="login" action="${createLink(controller:'login') }">
-        <input type="submit" value="Login">
-      </form>
-    </sec:ifNotLoggedIn>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><g:message code="languages" default="Languages"/> <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <navBar:localeDropdownListItems uri="${request.forwardURI}"/>
-        </ul>
-      </li>-->
-    </content>
+  <div id="content" role="main">
+      <section class="row colset-2-its">
+          <h1><g:message code="welcome.title" /></h1>
 
-    <div id="content" role="main">
-        <section class="row colset-2-its">
-            <h1><g:message code="welcome.title" /></h1>
+          <sec:ifNotLoggedIn>
+            <!--<g:link controller='login' action='auth'>Login</g:link>-->
+            <i><g:message code="welcome.notloggedin.label" /></i>
+          </sec:ifNotLoggedIn>
 
-            <sec:ifNotLoggedIn>
-              <!--<g:link controller='login' action='auth'>Login</g:link>-->
-              <i><g:message code="welcome.notloggedin.label" /></i>
-            </sec:ifNotLoggedIn>
-
-            <sec:ifLoggedIn>
-            <div id="controllers" role="navigation">
-                <h2><g:message code="welcome.available.controllers.label" /></h2>
-                <p><g:message code="welcome.body" /></p>
+          <sec:ifLoggedIn>
+            <g:message code="welcome.loggedin.label" /> !
+              <sec:ifAnyGranted roles="ROLE_ADMIN">
                 <ul>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.name } }">
-                    <g:if test="${c.fullName.contains('Login') || c.fullName.contains('Logout')}">
-                      <g:if test="${session.role == 'admin'}">
-                       <%-- show administrative functions --%>
-                       <%-- TODO correct test using ROLE_ADMIN etc--%>
-                       <li class="controller">
-                           <g:link controller="${c.logicalPropertyName}">${c.shortName}</g:link>
-                       </li>
-                      </g:if>
-                    </g:if>
-                    <g:else>
-                        <li class="controller">
-                            <g:link controller="${c.logicalPropertyName}">${c.shortName}</g:link>
-                        </li>
-                    </g:else>
+                      <li class="controller">
+                          <g:link controller="${c.logicalPropertyName}">${c.shortName}</g:link>
+                      </li>
                     </g:each>
                 </ul>
-            </div>
-            </sec:ifLoggedIn>
-        </section>
-    </div>
-
+              </sec:ifAnyGranted>
+              <sec:ifAnyGranted roles="ROLE_USER">
+              <ul>
+                  <li class="controller">
+                    <g:link controller="country"><g:message code="country.label" /></g:link>
+                  </li>
+                  <li class="controller">
+                    <g:link controller="city"><g:message code="city.label" /></g:link>
+                  </li>
+                  <li class="controller">
+                    <g:link controller="university"><g:message code="university.label" /></g:link>
+                  </li>
+                  <li class="controller">
+                    <g:link controller="studyProgramme"><g:message code="studyProgramme.label" /></g:link>
+                  </li>
+                  <li class="controller">
+                    <g:link controller="curriculum"><g:message code="curriculum.label" /></g:link>
+                  </li>
+                  <li class="controller">
+                    <g:link controller="module"><g:message code="module.label" /></g:link>
+                  </li>
+                </ul>
+              </sec:ifAnyGranted>
+          </sec:ifLoggedIn>
+      </section>
+  </div>
 </body>
 </html>
