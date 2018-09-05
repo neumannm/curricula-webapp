@@ -15,10 +15,16 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/**/css/**',      access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
 	[pattern: '/**/images/**',   access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
 	[pattern: '/**/favicon.ico', access: ['IS_AUTHENTICATED_ANONYMOUSLY']],
-	[pattern: '/login',          access: ['permitAll']],
-	[pattern: '/login/**',       access: ['permitAll']],
-	[pattern: '/logout',         access: ['permitAll']],
-	[pattern: '/logout/**',      access: ['permitAll']],
+	[pattern: '/aclClass/**',       access: ['ROLE_ADMIN']],
+	[pattern: '/aclEntry/**',       access: ['ROLE_ADMIN']],
+	[pattern: '/aclObjectIdentity/**',       access: ['ROLE_ADMIN']],
+	[pattern: '/aclSid/**',         access: ['ROLE_ADMIN']],
+	[pattern: '/register/**',       access: ['permitAll']],
+	[pattern: '/registrationCode/**',       access: ['ROLE_ADMIN']],
+	[pattern: '/requestmap/**',     access: ['ROLE_ADMIN']],
+	[pattern: '/role/**',           access: ['ROLE_ADMIN']],
+	[pattern: '/user/**',           access: ['ROLE_ADMIN']],
+	[pattern: '/securityInfo/**',   access: ['ROLE_ADMIN']],
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [
