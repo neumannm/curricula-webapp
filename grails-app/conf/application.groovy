@@ -40,7 +40,7 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 //ROLE_USER, ROLE_ADMIN, IS_AUTHENTICATED_FULLY, IS_AUTHENTICATED_ANONYMOUSLY
 
 grails.plugin.springsecurity.password.algorithm='SHA-512'      //pw encryption algorithm
-grails.plugin.springsecurity.portMapper.httpPort = "8080"      //port map for http
+grails.plugin.springsecurity.portMapper.httpPort = "8181"      //port map for http
 grails.plugin.springsecurity.portMapper.httpsPort = "8443"     //port map for https
 grails.plugin.springsecurity.rejectIfNoRule = true             //force authentication if no rule exists
 
