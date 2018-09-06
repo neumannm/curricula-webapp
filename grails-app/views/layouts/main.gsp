@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/#">
+                <a class="navbar-brand" href="${g.createLink(absolute:false, uri:'/')}">
 		                <asset:image src="grails.svg" alt="Grails Logo"/>
                 </a>
             </div>
@@ -32,12 +32,12 @@
                     <li>
                       <g:pageProperty name="page.nav" />
                       <sec:ifLoggedIn>
-                        <form name="logout" method="POST" action="${createLink(controller:'logout') }">
+                        <form name="logout" method="POST" action="${g.createLink(controller:'logout') }">
                           <input type="submit" value="Logout">
                         </form>
                       </sec:ifLoggedIn>
                       <sec:ifNotLoggedIn>
-                      <form name="login" action="${createLink(controller:'login') }">
+                      <form name="login" action="${g.createLink(controller:'login', action:'auth') }">
                         <input type="submit" value="Login">
                       </form>
                       </sec:ifNotLoggedIn>
