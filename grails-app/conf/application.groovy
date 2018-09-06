@@ -44,5 +44,5 @@ grails.plugin.springsecurity.portMapper.httpPort = "8181"      //port map for ht
 grails.plugin.springsecurity.portMapper.httpsPort = "8443"     //port map for https
 grails.plugin.springsecurity.rejectIfNoRule = true             //force authentication if no rule exists
 
-grails.gsp.enable.reload = true
-grails.gsp.view.dir = "/var/www/grails/curricula/"
+//grails.gsp.enable.reload = true
+//grails.gsp.view.dir = "/var/www/grails/curricula/"
