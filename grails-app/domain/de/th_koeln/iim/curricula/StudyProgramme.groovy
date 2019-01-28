@@ -4,6 +4,7 @@ class StudyProgramme {
 
     String name
     String degree
+    String keyAspect
     University university
 
     static hasMany=[curricula:Curriculum]
@@ -11,6 +12,7 @@ class StudyProgramme {
 
     static constraints = {
       name(nullable:false, blank:false, size:5..100)
+      keyAspect inList: ["Library Science", "Information Science", "Library and Information Science", "Data Science"]
       university()
     }
 
