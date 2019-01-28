@@ -6,6 +6,7 @@ class StudyProgramme {
     String degree
     String keyAspect
     University university
+    String summary
 
     static hasMany=[curricula:Curriculum]
     static belongsTo=[university:University]
@@ -14,6 +15,7 @@ class StudyProgramme {
       name(nullable:false, blank:false, size:5..100)
       keyAspect inList: ["Library Science", "Information Science", "Library and Information Science", "Data Science"]
       university()
+      summary(nullable:true, blank:true, widget:'textarea')
     }
 
     String toString(){
