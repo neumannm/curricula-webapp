@@ -7,7 +7,7 @@ class Module {
     String description
     String content
     String teachingMethod
-    String ects
+    float ects
     boolean isMandatory
 
     static belongsTo=[curriculum:Curriculum]
