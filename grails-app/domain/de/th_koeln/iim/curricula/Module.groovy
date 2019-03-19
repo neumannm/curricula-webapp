@@ -16,7 +16,7 @@ class Module {
       title(nullable:false, blank:false)
       description(nullable:false, blank:false, widget:'textarea')
       content(nullable:true, blank:true, widget:'textarea')
-      ects(nullable:true, blank:true)
+      ects(nullable:true, blank:true, scale:2)
       teachingMethod(nullable:true, blank:true)
       semester(min:1)
       isMandatory()
