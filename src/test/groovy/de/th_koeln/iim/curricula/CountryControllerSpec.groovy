@@ -9,10 +9,8 @@ class CountryControllerSpec extends Specification implements ControllerUnitTest<
 
     def populateValidParams(params) {
         assert params != null
-
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
-        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        // Populate valid properties like...
+        params["name"] = 'Uganda'
     }
 
     void "Test the index action returns the correct model"() {
@@ -219,9 +217,3 @@ class CountryControllerSpec extends Specification implements ControllerUnitTest<
         flash.message != null
     }
 }
-
-
-
-
-
-

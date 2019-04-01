@@ -10,9 +10,8 @@ class ModuleControllerSpec extends Specification implements ControllerUnitTest<M
     def populateValidParams(params) {
         assert params != null
 
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
-        assert false, "TODO: Provide a populateValidParams() implementation for this generated test suite"
+        // Populate valid properties like...
+        params["name"] = 'someValidName'
     }
 
     void "Test the index action returns the correct model"() {
@@ -219,9 +218,3 @@ class ModuleControllerSpec extends Specification implements ControllerUnitTest<M
         flash.message != null
     }
 }
-
-
-
-
-
-
