@@ -9,8 +9,9 @@ class University {
     static belongsTo=[city:City]
     static hasMany=[programmes:StudyProgramme]
 
+    //TODO: Currently the size constraint cannot be used in addition to blank or nullable. Use a custom validator for these combinations. 
     static constraints = {
-      name(nullable:false, blank:false, size:4..80, matches:"[a-zA-Z\\-äöüÄÖÜß ]+")
+      name(nullable:false, blank:false, matches:"[a-zA-Z\\-äöüÄÖÜß ]+")
       type inList: ["Uni", "HAW", "Other"]
       city()
     }

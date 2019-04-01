@@ -6,8 +6,9 @@ class Country {
 
     static hasMany=[cities:City]
 
+    //TODO: Currently the size constraint cannot be used in addition to blank or nullable. Use a custom validator for these combinations.
     static constraints = {
-      name(nullable:false, blank:false, size:2..50, matches:"[a-zA-Z\\-äöüÄÖÜß]+", unique:true)
+      name(nullable:false, blank:false, matches:"[a-zA-Z\\-äöüÄÖÜß ]+", unique:true)
     }
 
     String toString(){

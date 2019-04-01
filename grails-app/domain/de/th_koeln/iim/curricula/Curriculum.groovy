@@ -9,9 +9,8 @@ class Curriculum {
     static hasMany=[modules:Module]
     static belongsTo=[programme:StudyProgramme]
 
-    //TODO: correct constraint for year
     static constraints = {
-      year(nullable:false, blank:false, min:1980, size:4)
+      year(nullable:false, blank:false, min:1980, max:2099)
     }
 
     String toString(){
