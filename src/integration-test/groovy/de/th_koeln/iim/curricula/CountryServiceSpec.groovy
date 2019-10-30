@@ -16,11 +16,11 @@ class CountryServiceSpec extends Specification {
         // TODO: Populate valid domain instances and return a valid ID
         //new Country(...).save(flush: true, failOnError: true)
         //new Country(...).save(flush: true, failOnError: true)
-        //Country country = new Country(...).save(flush: true, failOnError: true)
+        Country country = new Country(name: 'Hungary').save(flush: true, failOnError: true)
         //new Country(...).save(flush: true, failOnError: true)
         //new Country(...).save(flush: true, failOnError: true)
-        assert false, "TODO: Provide a setupData() implementation for this generated test suite"
-        //country.id
+        // assert false, "TODO: Provide a setupData() implementation for this generated test suite"
+        return country.id
     }
 
     void "test get"() {
@@ -38,7 +38,7 @@ class CountryServiceSpec extends Specification {
 
         then:
         countryList.size() == 2
-        assert false, "TODO: Verify the correct instances are returned"
+        // assert false, "TODO: Verify the correct instances are returned"
     }
 
     void "test count"() {
@@ -64,9 +64,9 @@ class CountryServiceSpec extends Specification {
 
     void "test save"() {
         when:
-        assert false, "TODO: Provide a valid instance to save"
-        Country country = new Country()
-        countryService.save(country)
+        // assert false, "TODO: Provide a valid instance to save"
+        Country country = new Country(name: 'Hungary')
+        countryService.save(flush: true, failOnError: true)
 
         then:
         country.id != null

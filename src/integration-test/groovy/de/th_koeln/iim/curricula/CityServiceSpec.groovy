@@ -16,11 +16,11 @@ class CityServiceSpec extends Specification {
         // TODO: Populate valid domain instances and return a valid ID
         //new City(...).save(flush: true, failOnError: true)
         //new City(...).save(flush: true, failOnError: true)
-        //City city = new City(...).save(flush: true, failOnError: true)
+        City city = new City(name: 'Bairut').save(flush: true, failOnError: true)
         //new City(...).save(flush: true, failOnError: true)
         //new City(...).save(flush: true, failOnError: true)
-        assert false, "TODO: Provide a setupData() implementation for this generated test suite"
-        //city.id
+        // assert false, "TODO: Provide a setupData() implementation for this generated test suite"
+        return city.id
     }
 
     void "test get"() {
